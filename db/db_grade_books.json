@@ -1,0 +1,50 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "Bagas",
+            "password": "123456",
+            "createdAt": "2023-01-01T00:00:00.000Z",
+            "updatedAt": "2023-01-01T00:00:00.000Z"
+        },
+        {
+            "id": 2,
+            "username": "Ijan",
+            "password": "123456",
+            "createdAt": "2023-01-01T00:00:00.000Z",
+            "updatedAt": "2023-01-01T00:00:00.000Z"
+        }
+    ],
+    "subjects": [
+        {
+            "id": 1,
+            "subjectName": "Matematika"
+        }
+    ],
+    "subjectTeachers": [
+        {
+            "id": 1,
+            "userId": 1,
+            "subjectId": 1
+        }
+    ],
+    "students": [
+        {
+            "id": 1,
+            "userId": 2,
+            "fullName": "Artasya Legina",
+            "nis": "123123",
+            "rombel": "PPLG XI-1",
+            "rayon": "Cicurug 3"
+        }
+    ],
+    "scores": [
+        {
+            "id": 1,
+            "studentId": 1,
+            "subjectId": 1,
+            "score": 90,
+            "type": "ATS"
+        }
+    ]
+}
