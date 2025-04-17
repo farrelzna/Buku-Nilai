@@ -20,8 +20,8 @@
 
 <script>
 import axios from 'axios';
-import { userRouter } from 'vue-router';
-const router = userRouter();
+// import { userRouter } from 'vue-router';
+// const router = userRouter();
 
 export default {
 
@@ -55,33 +55,34 @@ export default {
             }
             if (this.username && this.password) {
                 // siapkan data yang akan dicek
-                let payload = {
+                const payload = {
                     username: this.username,
                     password: this.password
                 }
-                this.hitAxios('https://localhost:3000/users', payload);
+                this.hitAxios('http://localhost:3000/users', payload);
             }
         },
-        hitAxios(endpoint, payload) {
-            axios({
-                method: 'get',
-                url: endpoint,
-                responseType: 'json'
-            })
-            .then(function (response) {
-                // console.log(response);
-                let users = response.data;
-                let userByUsername = users.filter(function(user) {
-                    return user.username == payload.username && user.password == payload.password;
-                })
-                if (userByUsername.length > 0) {
-                    // alert('Anda Berhasil Login}')
-                    router.push('/dashboard');
-                } else {
-                    alert ('Anda Gagal Login, Try Again!');
-                }
-            });
-        }
+       hitAxios(endpoint, payload) {
+        axios.get(endpoint, {
+            params: {
+                username: payload.username,
+                password: payload.password
+            }
+        })
+        .then((response) => {
+            if (response.data.length > 0) {
+                localStorage.setItem('user', JSON.stringify(response.data[0]));
+                // jika data ditemukan, redirect ke halaman home
+                this.$router.push('/dashboard');
+            } else {
+                alert('gagal login, coba lagi !');
+            }
+        })
+        .catch((error) => {
+            console.log('Terjadi kesalahan saat login' , error);
+            alert('gagal login, coba lagi !');
+        });
+       }
     }
 }
 </script>

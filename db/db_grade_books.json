@@ -4,6 +4,7 @@
             "id": 1,
             "username": "Bagas",
             "password": "123456",
+            "role": "teacher",
             "createdAt": "2023-01-01T00:00:00.000Z",
             "updatedAt": "2023-01-01T00:00:00.000Z"
         },
@@ -11,6 +12,7 @@
             "id": 2,
             "username": "Ijan",
             "password": "123456",
+            "role": "student",
             "createdAt": "2023-01-01T00:00:00.000Z",
             "updatedAt": "2023-01-01T00:00:00.000Z"
         }
