@@ -10,7 +10,7 @@
         },
         {
             "id": 2,
-            "username": "Ijan",
+            "username": "Artasya",
             "password": "123456",
             "role": "student",
             "createdAt": "2023-01-01T00:00:00.000Z",
@@ -38,6 +38,14 @@
             "nis": "123123",
             "rombel": "PPLG XI-1",
             "rayon": "Cicurug 3"
+        },
+        {
+            "id": 2,
+            "userId": 2,
+            "fullName": "Bagas",
+            "nis": "12309999",
+            "rombel": "PPLG XI-2",
+            "rayon": "Sukasari 1"
         }
     ],
     "scores": [
